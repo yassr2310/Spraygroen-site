@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -31,7 +32,7 @@
         /* Lokkertjes / USP Grid */
         .usp-grid { display: grid; grid-template-columns: 1fr; gap: 15px; max-width: 700px; margin: 0 auto 30px auto; }
         @media (min-width: 600px) { .usp-grid { grid-template-columns: 1fr 1fr 1fr; } }
-        .usp-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); border-top: 4px solid #2ecc71; }
+        .usp-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); border-top: 4px solid #2ecc71; text-align: left; }
         .usp-card h3 { font-size: 1.1rem; color: #2c3e50; margin-bottom: 8px; }
         .usp-card p { font-size: 0.95rem; color: #555; line-height: 1.4; }
 
@@ -43,7 +44,7 @@
 
         /* 3. Mobiel-vriendelijke Vergelijkingstabel */
         .table-wrapper { width: 100%; overflow-x: auto; margin: 20px 0; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); background: white; }
-        .comparison-table { width: 100%; border-collapse: collapse; text-align: left; min-width: 600px; }
+        .comparison-table { width: 100%; border-collapse: collapse; text-align: left; min-width: 700px; }
         .comparison-table th, .comparison-table td { padding: 14px; border-bottom: 1px solid #edf2f7; font-size: 0.95rem; vertical-align: top; }
         .comparison-table th { background-color: #2c3e50; color: white; font-weight: bold; }
         .highlight { background-color: #e6fffa; font-weight: bold; color: #234e52; }
@@ -75,19 +76,20 @@
             <h1>Binnen 3 weken een perfect, diepgroen gazon</h1>
             <p>Dé revolutie in gazonaanleg met hydroseeding. Snel, voordelig en 100% succesgarantie.</p>
             <div class="btn-box">
-                <a href="#terugbellen" class="btn quote-btn">Prijsopgave binnen 24u</a>
-                <a href="tel:0610408997" class="btn phone-btn">Bel direct: 06 - 1040 8997</a>
+                <!-- KNOP TEKST GEWIJZIGD NAAR TERUGBELVERZOEK -->
+                <a href="#terugbellen" class="btn quote-btn">Vraag een terugbelverzoek aan</a>
+                <a href="tel:0610408997" class="btn phone-btn">Bel direct onze specialist</a>
                 <a href="https://wa.me" class="btn wa-btn" target="_blank">Stuur een WhatsApp</a>
             </div>
         </div>
     </section>
 
-    <!-- NEW: De Lokkertjes / USP's -->
+    <!-- De Lokkertjes / USP's -->
     <section class="content-section" style="padding-bottom: 10px;">
         <div class="usp-grid">
             <div class="usp-card">
-                <h3>🚀 Offerte via WhatsApp</h3>
-                <p>Geen gedoe met lange mailwisselingen. Stuur ons een appje en ontvang binnen 24 uur een scherpe prijs.</p>
+                <h3>🚀 Contact via WhatsApp</h3>
+                <p>Geen gedoe met lange mailwisselingen. Stuur ons een appje en ontvang binnen 24 uur een reactie.</p>
             </div>
             <div class="usp-card">
                 <h3>🌱 100% Groengarantie</h3>
@@ -117,10 +119,10 @@
         </div>
     </section>
 
-    <!-- 3. Kosten Vergelijking (SLIM GEFORMULEERD) -->
+    <!-- 3. Kosten Vergelijking -->
     <section class="content-section" style="background: #f7fafc;">
         <h2>Kosten & Resultaat (Rekenvoorbeeld 250 m²)</h2>
-        <p class="subtitle">Waarom traditioneel inzaaien onderaan de streep vaak dubbel geld kost.</p>
+        <p class="subtitle">Waarom traditioneel inzaaien onderaan de streep vaak duizenden euro's extra kost.</p>
         
         <div class="table-wrapper">
             <table class="comparison-table">
@@ -148,4 +150,3 @@
                     <tr class="highlight">
                         <td>✨ Spraygroen Hydroseeding</td>
                         <td>± € 750,- <br><small style="color:#22543d;">(Inclusief garantie)</small></td>
-                        <td><span class="badge-good">NUL RISICO</span> Het zaad zit vastgeplakt in een beschermende, voedende mulchlaag. Vogels kunnen er niet bij en wind krijgt geen vat. **Het lukt in één keer.** Alleen water geven!</td>
