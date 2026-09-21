@@ -5,101 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spraygroen.nl | Hydraulisch Zaaien & Gazonaanleg</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
-        body { background: #f4f7f4; color: #333; overflow-x: hidden; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; scroll-behavior: smooth; }
+        body { background: #f9fbf9; color: #333; overflow-x: hidden; }
         
-        /* Video Header Container */
-        .hero {
-            position: relative;
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            overflow: hidden;
-        }
+        /* 1. Video Header */
+        .hero { position: relative; height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; text-align: center; color: white; overflow: hidden; }
+        .hero-video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: 1; transform: translate(-50%, -50%); object-fit: cover; }
+        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.45); z-index: 2; }
+        .hero-content { position: relative; z-index: 3; max-width: 800px; padding: 20px; }
+        .hero-content h1 { font-size: 3rem; font-weight: 800; margin-bottom: 20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .hero-content p { font-size: 1.3rem; margin-bottom: 30px; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
+        
+        .btn { display: inline-block; padding: 15px 40px; background: #2ecc71; color: white; text-decoration: none; font-size: 1.1rem; font-weight: bold; border-radius: 50px; transition: 0.3s; box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4); }
+        .btn:hover { background: #27ae60; transform: translateY(-3px); }
 
-        /* De Video Achtergrond */
-        .hero-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: 1;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-        }
+        /* Algemene Sectie Styling */
+        section.content-section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
+        section.content-section h2 { font-size: 2.2rem; color: #2c3e50; margin-bottom: 15px; }
+        section.content-section p.subtitle { font-size: 1.1rem; color: #7f8c8d; margin-bottom: 40px; }
 
-        /* Donkere laag over de video voor leesbaarheid tekst */
-        .overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.45);
-            z-index: 2;
-        }
+        /* 2. Voor en Na Slider Container */
+        .slider-container { width: 100%; max-width: 700px; margin: 0 auto; position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .slider-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+        .img-after { z-index: 1; }
+        .img-before { z-index: 2; width: 50%; /* Dit wordt aangepast door de slider */ border-right: 3px solid white; }
+        .slider-input { position: absolute; -webkit-appearance: none; appearance: none; width: 100%; height: 100%; background: transparent; z-index: 3; top: 0; left: 0; cursor: ew-resize; }
+        .slider-input::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 40px; height: 40px; background: #2ecc71; border: 3px solid white; border-radius: 50%; box-shadow: 0 0 10px rgba(0,0,0,0.3); }
 
-        /* Inhoud bovenop de video */
-        .hero-content {
-            position: relative;
-            z-index: 3;
-            max-width: 800px;
-            padding: 20px;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-        }
-
-        .hero-content p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-        }
-
-        /* Opvallende Actieknop */
-        .btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: #2ecc71;
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: 0.3s ease;
-            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
-        }
-
-        .btn:hover {
-            background: #27ae60;
-            transform: translateY(-3px);
-        }
+        /* 3. Contact & Offerte Formulier */
+        .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: left; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #34495e; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; outline: none; transition: 0.3s; }
+        .form-group input:focus, .form-group textarea:focus { border-color: #2ecc71; }
+        .submit-btn { width: 100%; padding: 15px; background: #2c3e50; color: white; border: none; font-size: 1.1rem; font-weight: bold; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background: #1a252f; }
     </style>
 </head>
 <body>
 
+    <!-- 1. Video Header -->
     <section class="hero">
-        <!-- Vervang 'video.mp4' straks door de link naar jouw eigen video-bestand -->
         <video autoplay loop muted playsinline class="hero-video">
             <source src="video.mp4" type="video/mp4">
-            Je browser ondersteunt geen video-achtergronden.
         </video>
         <div class="overlay"></div>
-        
         <div class="hero-content">
             <h1>Binnen 3 weken een perfect, diepgroen gazon</h1>
             <p>Dé revolutie in gazonaanleg met hydroseeding. Snel, voordelig en ijzersterk.</p>
-            <a href="#contact" class="btn">Gratis Offerte Aanvragen</a>
+            <a href="#offerte" class="btn">Gratis Offerte Aanvragen</a>
         </div>
     </section>
+
+    <!-- 2. Voor en Na Sectie -->
+    <section class="content-section">
+        <h2>Het Resultaat van Hydroseeding</h2>
+        <p class="subtitle">Sleep de balk om het verschil te zien tussen kale grond en ons droomgazon.</p>
+        
+        <div class="slider-container">
+            <!-- Achtergrond foto (NA) -->
+            <img class="slider-img img-after" src="na.jpg" alt="Gazon Na Hydroseeding">
+            <!-- Voorgrond foto (VOOR) -->
+            <div class="slider-img img-before" id="before-box">
+                <img src="voor.jpg" alt="Grond Voor Hydroseeding" style="width:700px; height:100%; object-fit:cover; max-width:none;">
+            </div>
+            <!-- De schuifbalk -->
+            <input type="range" min="0" max="100" value="50" class="slider-input" id="slider">
+        </div>
+    </section>
+
+    <!-- 3. Offerte Sectie -->
+    <section id="offerte" class="content-section" style="background: #f0f4f1;">
+        <h2>Direct een prijsindicatie?</h2>
+        <p class="subtitle">Vul je gegevens in en ontvang snel een vrijblijvend voorstel.</p>
+        
+        <div class="form-container">
+            <!-- Formspree koppeling zorgt dat de mail gratis bij jou aankomt -->
+            <form action="https://formspree.io" method="POST">
+                <div class="form-group">
+                    <label>Naam</label>
+                    <input type="text" name="naam" required placeholder="Je volledige naam">
+                </div>
+                <div class="form-group">
+                    <label>E-mailadres</label>
+                    <input type="email" name="_replyto" required placeholder="je@email.nl">
+                </div>
+                <div class="form-group">
+                    <label>Telefoonnummer</label>
+                    <input type="tel" name="telefoon" placeholder="06 - 12345678">
+                </div>
+                <div class="form-group">
+                    <label>Geschatte oppervlakte gazon (in m²)</label>
+                    <input type="number" name="oppervlakte" placeholder="Bijv. 150">
+                </div>
+                <div class="form-group">
+                    <label>Opmerkingen of situatie</label>
+                    <textarea name="bericht" rows="4" placeholder="Vertel ons meer over de ondergrond of bereikbaarheid..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Verzend Aanvraag</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Script voor de werkende schuifbalk -->
+    <script>
+        const slider = document.getElementById('slider');
+        const beforeBox = document.getElementById('before-box');
+        slider.addEventListener('input', (e) => {
+            const value = e.target.value;
+            beforeBox.style.width = `${value}%`;
+        });
+    </script>
 
 </body>
 </html>
