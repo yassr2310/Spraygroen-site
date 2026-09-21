@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -32,8 +33,15 @@
         .slider-input { position: absolute; -webkit-appearance: none; appearance: none; width: 100%; height: 100%; background: transparent; z-index: 3; top: 0; left: 0; cursor: ew-resize; }
         .slider-input::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 40px; height: 40px; background: #2ecc71; border: 3px solid white; border-radius: 50%; box-shadow: 0 0 10px rgba(0,0,0,0.3); }
 
-        /* 3. Over Jesse Sectie */
-        .about-box { max-width: 700px; margin: 0 auto 40px auto; background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.02); text-align: left; border-left: 5px solid #2ecc71; }
+        /* 3. Vergelijkingstabel */
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; text-align: left; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .comparison-table th, .comparison-table td { padding: 15px; border-bottom: 1px solid #edf2f7; }
+        .comparison-table th { background-color: #2c3e50; color: white; font-weight: bold; }
+        .comparison-table tr:hover { background-color: #f7fafc; }
+        .highlight { background-color: #e6fffa; font-weight: bold; color: #234e52; }
+
+        /* Over Jesse Sectie */
+        .about-box { max-width: 700px; margin: 0 auto; background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.02); text-align: left; border-left: 5px solid #2ecc71; }
         .about-box p { font-size: 1.1rem; line-height: 1.6; color: #4a5568; margin-bottom: 15px; }
 
         /* 4. Contact & Offerte Formulier */
@@ -75,8 +83,45 @@
         </div>
     </section>
 
-    <!-- 3. Over Jesse (Verhaaltje) -->
-    <section class="content-section" style="padding-top: 20px;">
+    <!-- NEW: Kosten & Nadelen Vergelijking -->
+    <section class="content-section" style="background: #f7fafc;">
+        <h2>Waarom Hydroseeding de slimste keuze is</h2>
+        <p class="subtitle">Rekenvoorbeeld gebaseerd op een gemiddeld gazon van 250 m².</p>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Methode (Voor 250 m²)</th>
+                    <th>Gemiddelde Kosten</th>
+                    <th>Arbeidsuren</th>
+                    <th>Kans op mislukken / Risico's</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Traditioneel graszaad inzaaien</strong></td>
+                    <td>Laag (€)</td>
+                    <td>Gemiddeld</td>
+                    <td><strong>Hoog risico:</strong> Vogels eten het zaad op, wind waait het weg. Lage ontkiemingsgraad en snel kale plekken.</td>
+                </tr>
+                <tr>
+                    <td><strong>Graszoden (Kanten-klaar)</strong></td>
+                    <td>Extreem Hoog (€€€)</td>
+                    <td>Heel Hoog (Zwaar werk)</td>
+                    <td>Lauw risico, maar zware fysieke arbeid en enorm hoge materiaalkosten.</td>
+                </tr>
+                <tr class="highlight">
+                    <td>✨ Spraygroen Hydroseeding</td>
+                    <td>Zeer Voordelig (€€)</td>
+                    <td>Minimaal (Binnen 1 uur klaar)</td>
+                    <td><strong>Geen risico:</strong> Zaden zijn vastgeplakt in een beschermende mulchlaag. Hoge ontkiemingsgraad. Alleen water geven nodig!</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 3. Over Jesse -->
+    <section class="content-section" style="padding-top: 40px;">
         <h2>Maak kennis met Spraygroen</h2>
         <p class="subtitle">Vakmanschap en passie voor een perfecte groene mat.</p>
         <div class="about-box">
@@ -91,7 +136,6 @@
         <p class="subtitle">Vul je gegevens in en ontvang snel een vrijblijvend voorstel van Jesse.</p>
         
         <div class="form-container">
-            <!-- Aangepast naar jouw e-mailadres via Formspree -->
             <form action="https://formspree.io" method="POST">
                 <div class="form-group">
                     <label>Naam</label>
@@ -107,25 +151,7 @@
                 </div>
                 <div class="form-group">
                     <label>Geschatte oppervlakte gazon (in m²)</label>
-                    <input type="number" name="oppervlakte" placeholder="Bijv. 150">
+                    <input type="number" name="oppervlakte" placeholder="Bijv. 250">
                 </div>
                 <div class="form-group">
                     <label>Opmerkingen of situatie</label>
-                    <textarea name="bericht" rows="4" placeholder="Vertel ons meer over de ondergrond of bereikbaarheid..."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Verzend Aanvraag</button>
-            </form>
-        </div>
-    </section>
-
-    <script>
-        const slider = document.getElementById('slider');
-        const beforeBox = document.getElementById('before-box');
-        slider.addEventListener('input', (e) => {
-            const value = e.target.value;
-            beforeBox.style.width = `${value}%`;
-        });
-    </script>
-
-</body>
-</html>
