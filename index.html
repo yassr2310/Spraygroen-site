@@ -28,6 +28,13 @@
         section.content-section h2 { font-size: 1.8rem; color: #2c3e50; margin-bottom: 12px; }
         section.content-section p.subtitle { font-size: 1.05rem; color: #7f8c8d; margin-bottom: 25px; }
 
+        /* Lokkertjes / USP Grid */
+        .usp-grid { display: grid; grid-template-columns: 1fr; gap: 15px; max-width: 700px; margin: 0 auto 30px auto; }
+        @media (min-width: 600px) { .usp-grid { grid-template-columns: 1fr 1fr 1fr; } }
+        .usp-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); border-top: 4px solid #2ecc71; }
+        .usp-card h3 { font-size: 1.1rem; color: #2c3e50; margin-bottom: 8px; }
+        .usp-card p { font-size: 0.95rem; color: #555; line-height: 1.4; }
+
         /* 2. Media Grid (Voor & Na) */
         .media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; max-width: 700px; margin: 0 auto 30px auto; }
         .media-box { position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); aspect-ratio: 4/3; }
@@ -43,7 +50,7 @@
         .badge-bad { background: #fed7d7; color: #9b2c2c; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; }
         .badge-good { background: #c6f6d5; color: #22543d; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; }
 
-        /* Over Jesse Sectie */
+        /* Over Ons Sectie */
         .about-box { max-width: 700px; margin: 0 auto; background: #ffffff; padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.02); text-align: left; border-left: 5px solid #2ecc71; }
         .about-box p { font-size: 1.05rem; line-height: 1.6; color: #4a5568; margin-bottom: 15px; }
 
@@ -53,7 +60,7 @@
         .form-group label { display: block; margin-bottom: 6px; font-weight: bold; color: #34495e; }
         .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; outline: none; }
         .form-group input:focus, .form-group textarea:focus { border-color: #2ecc71; }
-        .submit-btn { width: 100%; padding: 15px; background: #2ecc71; color: white; border: none; font-size: 1.1rem; font-weight: bold; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3); }
+        .submit-btn { width: 100%; padding: 15px; background: #2ecc71; color: white; border: none; font-size: 1.1rem; font-weight: bold; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3); text-align: center; }
     </style>
 </head>
 <body>
@@ -66,17 +73,34 @@
         <div class="overlay"></div>
         <div class="hero-content">
             <h1>Binnen 3 weken een perfect, diepgroen gazon</h1>
-            <p>Dé revolutie in gazonaanleg met hydroseeding. Snel, voordelig en ijzersterk.</p>
+            <p>Dé revolutie in gazonaanleg met hydroseeding. Snel, voordelig en 100% succesgarantie.</p>
             <div class="btn-box">
-                <a href="#offerte" class="btn quote-btn">Gratis Prijsopgave</a>
-                <a href="tel:0610408997" class="btn phone-btn">Bel Jesse: 06 - 1040 8997</a>
-                <!-- WHATSAPP KNOP (Vervang HIER_NUMMER door je WhatsApp-simnummer) -->
-                <a href="https://wa.me" class="btn wa-btn" target="_blank">WhatsApp Jesse</a>
+                <a href="#terugbellen" class="btn quote-btn">Prijsopgave binnen 24u</a>
+                <a href="tel:0610408997" class="btn phone-btn">Bel direct: 06 - 1040 8997</a>
+                <a href="https://wa.me" class="btn wa-btn" target="_blank">Stuur een WhatsApp</a>
             </div>
         </div>
     </section>
 
-    <!-- 2. Voor en Na Foto's (Oerdegelijk naast elkaar op mobiel) -->
+    <!-- NEW: De Lokkertjes / USP's -->
+    <section class="content-section" style="padding-bottom: 10px;">
+        <div class="usp-grid">
+            <div class="usp-card">
+                <h3>🚀 Offerte via WhatsApp</h3>
+                <p>Geen gedoe met lange mailwisselingen. Stuur ons een appje en ontvang binnen 24 uur een scherpe prijs.</p>
+            </div>
+            <div class="usp-card">
+                <h3>🌱 100% Groengarantie</h3>
+                <p>Omdat het graszaad muurvast in onze biologische mulchlaag zit, krijgt het gazon gegarandeerd een perfecte start.</p>
+            </div>
+            <div class="usp-card">
+                <h3>❌ Mislukt gazon herstellen?</h3>
+                <p>Zelf gezaaid en opgeknaagd door de vogels? Wij spuiten de kale plekken of het hele veld in één keer weer kerngezond.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Voor en Na Foto's -->
     <section class="content-section">
         <h2>Het Resultaat van Hydroseeding</h2>
         <p class="subtitle">Het indrukwekkende verschil tussen kale grond en ons droomgazon.</p>
@@ -93,10 +117,10 @@
         </div>
     </section>
 
-    <!-- 3. Kosten Vergelijking -->
+    <!-- 3. Kosten Vergelijking (SLIM GEFORMULEERD) -->
     <section class="content-section" style="background: #f7fafc;">
         <h2>Kosten & Resultaat (Rekenvoorbeeld 250 m²)</h2>
-        <p class="subtitle">Waarom goedkoop zaaien uiteindelijk vaak duurkoop blijkt te zijn.</p>
+        <p class="subtitle">Waarom traditioneel inzaaien onderaan de streep vaak dubbel geld kost.</p>
         
         <div class="table-wrapper">
             <table class="comparison-table">
@@ -104,54 +128,24 @@
                     <tr>
                         <th>Methode</th>
                         <th>Richtprijs (250 m²)</th>
-                        <th>Jouw Fysieke Arbeid</th>
-                        <th>Risico's & Resultaat</th>
+                        <th>Risico's & Verborgen kosten</th>
+                        <th>Eindresultaat</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><strong>Traditioneel graszaad</strong></td>
-                        <td>± € 350,-</td>
-                        <td>Gemiddeld</td>
-                        <td><span class="badge-bad">Hoog risico</span> Vogels eten het zaad op. Lage ontkieming en snel kale plekken. Vaak opnieuw zaaien.</td>
+                        <td>± € 350,- <br><small style="color:#e53e3e;">(Let op: vaak dubbele kosten!)</small></td>
+                        <td><span class="badge-bad">Extreem Hoog Risico</span> Vogels eten het zaad op, wind waait het weg. Mislukt het? Dan moet je opnieuw grond bewerken, nieuw zaad kopen en weer weken wachten. Je bent dus al snel <strong>€ 700,- én maanden tijd kwijt</strong>.</td>
+                        <td>Vaak onegaal met kale plekken en veel onkruid.</td>
                     </tr>
                     <tr>
                         <td><strong>Graszoden leggen</strong></td>
                         <td>± € 1.750,-</td>
-                        <td>Extreem Zwaar</td>
-                        <td><span class="badge-good">Laag risico</span> Direct groen, maar loodzwaar kruiwagens sjouwen én de hoofdprijs betalen.</td>
+                        <td><span class="badge-good">Laag risico</span> Wel direct groen, maar je betaalt absoluut de hoofdprijs en het kost je dagenlang loodzwaar kruiwagens sjouwen en rollen leggen.</td>
+                        <td>Direct een strak gazon, maar extreem duur.</td>
                     </tr>
                     <tr class="highlight">
                         <td>✨ Spraygroen Hydroseeding</td>
-                        <td>± € 750,-</td>
-                        <td>NUL (Jesse regelt alles)</td>
-                        <td><span class="badge-good">Geen risico</span> Het zaad zit vastgeplakt in beschermende mulch. Extreem hoge ontkieming. Alleen water geven!</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- 4. Over Jesse -->
-    <section class="content-section" style="padding-top: 30px;">
-        <h2>Maak kennis met Spraygroen</h2>
-        <p class="subtitle">Vakmanschap en passie voor een perfecte groene mat.</p>
-        <div class="about-box">
-            <p>Mijn naam is <strong>Jesse</strong>, en ik heb een enorme passie en jarenlange ervaring met gras- en gazononderhoud. Door de jaren heen heb ik gezien hoe lastig, traag en kwetsbaar traditioneel inzaaien kan zijn. Daarom richt ik mij volledig op <strong>hydroseeding</strong>: dé modernste en meest effective methode voor een prachtig gazon.</p>
-            <p>Met mijn specialistische kennis zorg ik voor de perfecte samenstelling van het mengsel, afgestemd op jouw bodem. Of het nu gaat om een particuliere tuin of een groter terrein; ik zorg voor een snelle, egale ontkieming en een ijzersterke start van jouw nieuwe grasmat.</p>
-        </div>
-    </section>
-
-    <!-- 5. Offerte Formulier -->
-    <section id="offerte" class="content-section" style="background: #f0f4f1;">
-        <h2>Direct een prijsopgave ontvangen?</h2>
-        <p class="subtitle">Vul je gegevens in en Jesse stuurt je snel een vrijblijvend voorstel.</p>
-        
-        <div class="form-container">
-            <form action="https://formspree.io" method="POST">
-                <div class="form-group">
-                    <label>Naam</label>
-                    <input type="text" name="naam" required placeholder="Je volledige naam">
-                </div>
-                <div class="form-group">
-                    <label>E-mailadresse</label>
+                        <td>± € 750,- <br><small style="color:#22543d;">(Inclusief garantie)</small></td>
+                        <td><span class="badge-good">NUL RISICO</span> Het zaad zit vastgeplakt in een beschermende, voedende mulchlaag. Vogels kunnen er niet bij en wind krijgt geen vat. **Het lukt in één keer.** Alleen water geven!</td>
