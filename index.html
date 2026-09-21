@@ -28,11 +28,15 @@
         .slider-container { width: 100%; max-width: 700px; margin: 0 auto; position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .slider-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
         .img-after { z-index: 1; }
-        .img-before { z-index: 2; width: 50%; /* Dit wordt aangepast door de slider */ border-right: 3px solid white; }
+        .img-before { z-index: 2; width: 50%; border-right: 3px solid white; }
         .slider-input { position: absolute; -webkit-appearance: none; appearance: none; width: 100%; height: 100%; background: transparent; z-index: 3; top: 0; left: 0; cursor: ew-resize; }
         .slider-input::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 40px; height: 40px; background: #2ecc71; border: 3px solid white; border-radius: 50%; box-shadow: 0 0 10px rgba(0,0,0,0.3); }
 
-        /* 3. Contact & Offerte Formulier */
+        /* 3. Over Jesse Sectie */
+        .about-box { max-width: 700px; margin: 0 auto 40px auto; background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.02); text-align: left; border-left: 5px solid #2ecc71; }
+        .about-box p { font-size: 1.1rem; line-height: 1.6; color: #4a5568; margin-bottom: 15px; }
+
+        /* 4. Contact & Offerte Formulier */
         .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: left; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #34495e; }
@@ -63,24 +67,31 @@
         <p class="subtitle">Sleep de balk om het verschil te zien tussen kale grond en ons droomgazon.</p>
         
         <div class="slider-container">
-            <!-- Achtergrond foto (NA) -->
             <img class="slider-img img-after" src="na.jpg" alt="Gazon Na Hydroseeding">
-            <!-- Voorgrond foto (VOOR) -->
             <div class="slider-img img-before" id="before-box">
                 <img src="voor.jpg" alt="Grond Voor Hydroseeding" style="width:700px; height:100%; object-fit:cover; max-width:none;">
             </div>
-            <!-- De schuifbalk -->
             <input type="range" min="0" max="100" value="50" class="slider-input" id="slider">
         </div>
     </section>
 
-    <!-- 3. Offerte Sectie -->
+    <!-- 3. Over Jesse (Verhaaltje) -->
+    <section class="content-section" style="padding-top: 20px;">
+        <h2>Maak kennis met Spraygroen</h2>
+        <p class="subtitle">Vakmanschap en passie voor een perfecte groene mat.</p>
+        <div class="about-box">
+            <p>Mijn naam is <strong>Jesse</strong>, en ik heb een enorme passie en jarenlange ervaring met gras- en gazononderhoud. Door de jaren heen heb ik gezien hoe lastig, traag en kwetsbaar traditioneel inzaaien kan zijn. Daarom richt ik mij volledig op <strong>hydroseeding</strong>: dé modernste en meest effectieve methode voor een prachtig gazon.</p>
+            <p>Met mijn specialistische kennis zorg ik voor de perfecte samenstelling van het mengsel, afgestemd op jouw bodem. Of het nu gaat om een particuliere tuin of een groter terrein; ik zorg voor een snelle, egale ontkieming en een ijzersterke start van jouw nieuwe grasmat. Kies je voor Spraygroen, dan kies je voor écht grasvakmanschap!</p>
+        </div>
+    </section>
+
+    <!-- 4. Offerte Sectie -->
     <section id="offerte" class="content-section" style="background: #f0f4f1;">
         <h2>Direct een prijsindicatie?</h2>
-        <p class="subtitle">Vul je gegevens in en ontvang snel een vrijblijvend voorstel.</p>
+        <p class="subtitle">Vul je gegevens in en ontvang snel een vrijblijvend voorstel van Jesse.</p>
         
         <div class="form-container">
-            <!-- Formspree koppeling zorgt dat de mail gratis bij jou aankomt -->
+            <!-- Aangepast naar jouw e-mailadres via Formspree -->
             <form action="https://formspree.io" method="POST">
                 <div class="form-group">
                     <label>Naam</label>
@@ -107,7 +118,6 @@
         </div>
     </section>
 
-    <!-- Script voor de werkende schuifbalk -->
     <script>
         const slider = document.getElementById('slider');
         const beforeBox = document.getElementById('before-box');
