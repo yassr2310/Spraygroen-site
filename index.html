@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -42,14 +41,16 @@
         .media-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .media-tag { position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem; }
 
-        /* 3. Mobiel-vriendelijke Vergelijkingstabel - MOBIEL FIX HIER */
-        .table-wrapper { width: 100%; overflow-x: auto; margin: 20px 0; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); background: white; -webkit-overflow-scrolling: touch; }
-        .comparison-table { width: 100%; border-collapse: collapse; text-align: left; min-width: 750px; }
-        .comparison-table th, .comparison-table td { padding: 14px; border-bottom: 1px solid #edf2f7; font-size: 0.95rem; vertical-align: top; }
-        .comparison-table th { background-color: #2c3e50; color: white; font-weight: bold; }
-        .highlight { background-color: #e6fffa; font-weight: bold; color: #234e52; }
-        .badge-bad { background: #fed7d7; color: #9b2c2c; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; display: inline-block; margin-bottom: 5px; }
-        .badge-good { background: #c6f6d5; color: #22543d; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; display: inline-block; margin-bottom: 5px; }
+        /* 3. VERVANGING VAN TABEL NAAR STABIELE BLOKKEN VOOR MOBIEL */
+        .methode-container { max-width: 700px; margin: 20px auto; text-align: left; }
+        .methode-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid #bdc3c7; }
+        .methode-card.success-card { border-left: 5px solid #2ecc71; background: #e6fffa; }
+        .methode-card h3 { font-size: 1.2rem; color: #2c3e50; margin-bottom: 10px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 5px; }
+        .methode-price { font-weight: bold; color: #27ae60; }
+        .methode-card p { font-size: 0.95rem; line-height: 1.5; color: #555; margin-bottom: 8px; }
+        .methode-card strong { color: #2c3e50; }
+        .badge-bad { background: #fed7d7; color: #9b2c2c; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
+        .badge-good { background: #c6f6d5; color: #22543d; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
 
         /* Over Ons Sectie */
         .about-box { max-width: 700px; margin: 0 auto; background: #ffffff; padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.02); text-align: left; border-left: 5px solid #2ecc71; }
@@ -76,8 +77,8 @@
             <h1>Binnen 3 weken een perfect, diepgroen gazon</h1>
             <p>Dé revolutie in gazonaanleg met hydroseeding. Actief in heel Noord-Nederland met 100% succesgarantie.</p>
             <div class="btn-box">
-                <!-- LINK EXACT RECHTGEZET NAAR ID VAN HET FORMULIER -->
-                <a href="#offerte-aanvraag" class="btn quote-btn">Offerte aanvragen</a>
+                <!-- KNOP LINK IS HIER VOLLEDIG EN HUNDRED PERCENT FIX -->
+                <a href="#aanvraagmenu" class="btn quote-btn">Offerte aanvragen</a>
                 <a href="https://wa.me" class="btn wa-btn" target="_blank">Stuur een WhatsApp</a>
             </div>
         </div>
@@ -118,34 +119,27 @@
         </div>
     </section>
 
-    <!-- 3. Kosten Vergelijking (VOLLEDIG SCHAALBAAR GEMAAKT) -->
+    <!-- 3. Kosten & Resultaat Blokken (OERDEGELIJK EN VERBERGT NOOIT MEER TEKST) -->
     <section class="content-section" style="background: #f7fafc;">
         <h2>Kosten & Resultaat (Rekenvoorbeeld 250 m²)</h2>
         <p class="subtitle">Waarom traditioneel inzaaien onderaan de streep vaak duizenden euro's extra kost.</p>
         
-        <div class="table-wrapper">
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Methode</th>
-                        <th>Richtprijs (250 m²)</th>
-                        <th>Risico's & Verborgen kosten</th>
-                        <th>Eindresultaat</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Traditioneel graszaad</strong></td>
-                        <td>± € 350,- <br><small style="color:#e53e3e;">(Let op: vaak dubbele kosten!)</small></td>
-                        <td><span class="badge-bad">Hoog Risico</span> Vogels eten het zaad op, wind waait het weg. Mislukt het? Dan moet je opnieuw grond bewerken, nieuw zaad kopen en weer weken wachten. Je bent dus al snel <strong>€ 700,- én maanden tijd kwijt</strong>.</td>
-                        <td>Vaak onegaal met kale plekken en veel onkruid.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Graszoden leggen</strong></td>
-                        <td>± € 1.750,-</td>
-                        <td><span class="badge-good">Laag risico</span> Wel direct groen, maar je betaalt absoluut de hoofdprijs en het kost je dagenlang loodzwaar kruiwagens sjouwen en rollen leggen.</td>
-                        <td>Direct een strak gazon, maar extreem duur.</td>
-                    </tr>
-                    <tr class="highlight">
-                        <td>✨ Spraygroen Hydroseeding</td>
-                        <td>± € 750,- <br><small style="color:#22543d;">(Inclusief garantie)</small></td>
+        <div class="methode-container">
+            
+            <!-- KAART 1 -->
+            <div class="methode-card">
+                <h3><span>1. Traditioneel graszaad</span> <span class="methode-price">± € 350,-</span></h3>
+                <p><strong>Risico's & Verborgen kosten:</strong> <span class="badge-bad">Hoog Risico</span> Vogels eten het zaad op, wind waait het weg. Mislukt het? Dan moet je opnieuw grond bewerken, nieuw zaad kopen en weer weken wachten. Je bent dus al snel <strong>€ 700,- én maanden tijd kwijt</strong>.</p>
+                <p><strong>Eindresultaat:</strong> Vaak een ongelijk gazon met kale plekken en veel onkruid.</p>
+            </div>
+
+            <!-- KAART 2 -->
+            <div class="methode-card">
+                <h3><span>2. Graszoden leggen</span> <span class="methode-price">± € 1.750,-</span></h3>
+                <p><strong>Risico's & Verborgen kosten:</strong> <span class="badge-good">Laag risico</span> Wel direct groen, maar je betaalt absoluut de hoofdprijs en het kost je dagenlang loodzwaar kruiwagens sjouwen en rollen leggen.</p>
+                <p><strong>Eindresultaat:</strong> Direct een strak gazon, maar extreem duur.</p>
+            </div>
+
+            <!-- KAART 3 (HIGHLIGHT) -->
+            <div class="methode-card success-card">
+                <h3><span>✨ 3. Spraygroen Hydroseeding</span> <span class="methode-price">± € 750,-</span></h3>
