@@ -3,133 +3,935 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Spraygroen.nl - Professionele gazonaanleg met hydroseeding in Noord-Nederland.">
+
     <title>Spraygroen.nl | Gazonaanleg Noord-Nederland</title>
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; scroll-behavior: smooth; }
-        body { background: #f9fbf9; color: #333; overflow-x: hidden; }
-        .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; overflow: hidden; }
-        .hero-video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); object-fit: cover; z-index: 1; }
-        .overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.45); z-index: 2; }
-        .hero-content { position: relative; z-index: 3; max-width: 800px; padding: 20px; }
-        .hero-content h1 { font-size: 2.3rem; margin-bottom: 20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 30px; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
-        .btn-box { display: flex; flex-direction: column; gap: 12px; max-width: 320px; margin: 0 auto; }
-        .btn { display: block; width: 100%; padding: 16px; text-align: center; color: white; text-decoration: none; font-size: 1.1rem; font-weight: bold; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .btn.quote-btn { background: #2ecc71; }
-        .btn.wa-btn { background: #25D366; }
-        section.content-section { padding: 40px 15px; max-width: 700px; margin: 0 auto; text-align: center; }
-        section.content-section h2 { font-size: 1.8rem; color: #2c3e50; margin-bottom: 12px; }
-        section.content-section p.subtitle { font-size: 1.05rem; color: #7f8c8d; margin-bottom: 25px; }
-        .usp-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 30px; }
-        @media (min-width: 600px) { .usp-grid { grid-template-columns: 1fr 1fr 1fr; } }
-        .usp-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); border-top: 4px solid #2ecc71; text-align: left; }
-        .usp-card h3 { font-size: 1.1rem; color: #2c3e50; margin-bottom: 8px; }
-        .usp-card p { font-size: 0.95rem; color: #555; }
-        .media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
-        .media-box { position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); aspect-ratio: 4/3; }
-        .media-box img { width: 100%; height: 100%; object-fit: cover; }
-        .media-tag { position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem; }
-        .methode-container { max-width: 700px; margin: 20px auto; text-align: left; }
-        .methode-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid #bdc3c7; text-align: left; }
-        .methode-card.success-card { border-left: 5px solid #2ecc71; background: #e6fffa; }
-        .methode-card h3 { font-size: 1.2rem; color: #2c3e50; margin-bottom: 10px; display: flex; justify-content: space-between; flex-wrap: wrap; }
-        .methode-price { font-weight: bold; color: #27ae60; }
-        .badge-bad { background: #fed7d7; color: #9b2c2c; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
-        .badge-good { background: #c6f6d5; color: #22543d; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
-        .about-box { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.02); text-align: left; border-left: 5px solid #2ecc71; }
-        .about-box p { font-size: 1.05rem; line-height: 1.6; color: #4a5568; margin-bottom: 15px; }
-        .form-container { background: white; padding: 25px 20px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: left; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 6px; font-weight: bold; color: #34495e; }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; outline: none; }
-        .form-group input:focus, .form-group textarea:focus { border-color: #2ecc71; }
-        .submit-btn { width: 100%; padding: 15px; background: #2ecc71; color: white; border: none; font-size: 1.1rem; font-weight: bold; border-radius: 8px; cursor: pointer; display: block; text-align: center; width: 100%; }
-        footer { padding: 20px; text-align: center; font-size: 0.8rem; color: #a0aec0; background: #f7fafc; border-top: 1px solid #edf2f7; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f9fbf9;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 620px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        }
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .btn-box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .quote-btn {
+            background: #2ecc71;
+        }
+
+        .wa-btn {
+            background: #25D366;
+        }
+
+        /* =========================
+           SPRAYGROEN AFBEELDING
+        ========================= */
+
+        .brand-image-section {
+            padding: 22px 15px 8px;
+            background: #f9fbf9;
+            text-align: center;
+        }
+
+        .brand-image {
+            display: block;
+            width: 100%;
+            max-width: 700px;
+            height: 190px;
+            margin: 0 auto;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 16px;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.10);
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section.content-section {
+            padding: 40px 15px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        section.content-section h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+
+        section.content-section p.subtitle {
+            font-size: 1.05rem;
+            color: #7f8c8d;
+            margin-bottom: 25px;
+        }
+
+        /* =========================
+           USP
+        ========================= */
+
+        .usp-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        @media (min-width: 600px) {
+
+            .usp-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+        }
+
+        .usp-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            border-top: 4px solid #2ecc71;
+            text-align: left;
+        }
+
+        .usp-card h3 {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .usp-card p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* =========================
+           VOOR / NA
+        ========================= */
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .media-box {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            aspect-ratio: 4/3;
+        }
+
+        .media-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .media-tag {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* =========================
+           METHODES
+        ========================= */
+
+        .methode-container {
+            max-width: 700px;
+            margin: 20px auto;
+            text-align: left;
+        }
+
+        .methode-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid #bdc3c7;
+        }
+
+        .methode-card.success-card {
+            border-left: 5px solid #2ecc71;
+            background: #e6fffa;
+        }
+
+        .methode-card h3 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .methode-price {
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        .badge-bad {
+            background: #fed7d7;
+            color: #9b2c2c;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .badge-good {
+            background: #c6f6d5;
+            color: #22543d;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* =========================
+           OVER ONS
+        ========================= */
+
+        .about-box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            text-align: left;
+            border-left: 5px solid #2ecc71;
+        }
+
+        .about-box p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+
+        .about-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           FORMULIER
+        ========================= */
+
+        .form-container {
+            background: white;
+            padding: 25px 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #2ecc71;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #2ecc71;
+            color: white;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #27ae60;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #a0aec0;
+            background: #f7fafc;
+            border-top: 1px solid #edf2f7;
+        }
+
+        /* =========================
+           MOBIEL
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .hero-content h1 {
+                font-size: 1.9rem;
+            }
+
+            .hero-content p {
+                font-size: 1.05rem;
+            }
+
+            .brand-image {
+                height: 145px;
+                border-radius: 12px;
+            }
+
+            .media-grid {
+                gap: 10px;
+            }
+
+        }
+
     </style>
 </head>
+
 <body>
 
+    <!-- =========================
+         HERO
+    ========================= -->
+
     <section class="hero">
-        <video autoplay loop muted playsinline class="hero-video">
+
+        <video
+            autoplay
+            loop
+            muted
+            playsinline
+            class="hero-video">
+
             <source src="video.mp4" type="video/mp4">
+
         </video>
+
         <div class="overlay"></div>
+
         <div class="hero-content">
-            <h1>Binnen 3 weken een perfect, diepgroen gazon</h1>
-            <p>Dé revolutie in gazonaanleg met hydroseeding. Actief in heel Noord-Nederland met 100% succesgarantie.</p>
+
+            <h1>
+                Binnen 3 weken een perfect,
+                diepgroen gazon
+            </h1>
+
+            <p>
+                Dé revolutie in gazonaanleg met hydroseeding.
+                Actief in heel Noord-Nederland met 100% succesgarantie.
+            </p>
+
             <div class="btn-box">
-                <!-- LINK RECHTSTREEKS VERBONDEN MET DE ID VAN HET FORMULIER ONDERAAN -->
-                <a href="#offerte-sectie" class="btn quote-btn">Offerte aanvragen</a>
-                <!-- GECORRIGEERDE WHATSAPP LINK MET DE INTERNATIONALE CODE DIE ALTIJD HET JUISTE NUMMER OPENT -->
-                <a href="https://whatsapp.com" class="btn wa-btn" target="_blank">Stuur een WhatsApp</a>
+
+                <a
+                    href="#offerte-sectie"
+                    class="btn quote-btn">
+
+                    Offerte aanvragen
+
+                </a>
+
+                <!-- WHATSAPP -->
+
+                <a
+                    href="https://wa.me/31610408997"
+                    class="btn wa-btn"
+                    target="_blank"
+                    rel="noopener">
+
+                    Stuur een WhatsApp
+
+                </a>
+
             </div>
+
         </div>
+
     </section>
 
+
+    <!-- =========================
+         SPRAYGROEN AFBEELDING
+    ========================= -->
+
+    <section class="brand-image-section">
+
+        <img
+            src="spraygroen.jpg"
+            alt="Spraygroen.nl - Gazonaanleg en Hydroseeding"
+            class="brand-image">
+
+    </section>
+
+
+    <!-- =========================
+         USP
+    ========================= -->
+
     <section class="content-section">
+
         <div class="usp-grid">
-            <div class="usp-card"><h3>🚀 Contact via WhatsApp</h3><p>Stuur ons een appje en ontvang binnen 24 uur een reactie.</p></div>
-            <div class="usp-card"><h3>🌱 100% Groengarantie</h3><p>Het graszaad zit muurvast in onze mulchlaag voor een perfecte start.</p></div>
-            <div class="usp-card"><h3>❌ Mislukt gazon herstellen?</h3><p>Kale plekken door vogels of wind? Wij spuiten het in één keer weer kerngezond.</p></div>
+
+            <div class="usp-card">
+
+                <h3>
+                    🚀 Contact via WhatsApp
+                </h3>
+
+                <p>
+                    Stuur ons een appje en ontvang
+                    binnen 24 uur een reactie.
+                </p>
+
+            </div>
+
+
+            <div class="usp-card">
+
+                <h3>
+                    🌱 100% Groengarantie
+                </h3>
+
+                <p>
+                    Het graszaad zit muurvast in
+                    onze mulchlaag voor een perfecte start.
+                </p>
+
+            </div>
+
+
+            <div class="usp-card">
+
+                <h3>
+                    ❌ Mislukt gazon herstellen?
+                </h3>
+
+                <p>
+                    Kale plekken door vogels of wind?
+                    Wij spuiten het in één keer weer kerngezond.
+                </p>
+
+            </div>
+
         </div>
 
-        <h2>Het Resultaat van Hydroseeding</h2>
-        <p class="subtitle">Het indrukwekkende verschil tussen kale grond en ons droomgazon.</p>
+
+        <h2>
+            Het Resultaat van Hydroseeding
+        </h2>
+
+        <p class="subtitle">
+            Het indrukwekkende verschil tussen
+            kale grond en ons droomgazon.
+        </p>
+
+
         <div class="media-grid">
-            <div class="media-box"><img src="voor.jpg" alt="Voor"><div class="media-tag">VOOR</div></div>
-            <div class="media-box"><img src="na.jpg" alt="Na"><div class="media-tag">NA</div></div>
+
+            <div class="media-box">
+
+                <img
+                    src="voor.jpg"
+                    alt="Voor">
+
+                <div class="media-tag">
+                    VOOR
+                </div>
+
+            </div>
+
+
+            <div class="media-box">
+
+                <img
+                    src="na.jpg"
+                    alt="Na">
+
+                <div class="media-tag">
+                    NA
+                </div>
+
+            </div>
+
         </div>
+
     </section>
-    <section class="content-section" style="background: #f7fafc;">
-        <h2>Kosten & Resultaat (Rekenvoorbeeld 250 m²)</h2>
-        <p class="subtitle">Waarom traditioneel inzaaien onderaan de streep vaak duizenden euro's extra kost.</p>
+
+
+    <!-- =========================
+         KOSTEN
+    ========================= -->
+
+    <section
+        class="content-section"
+        style="background:#f7fafc;">
+
+        <h2>
+            Kosten & Resultaat
+            (Rekenvoorbeeld 250 m²)
+        </h2>
+
+        <p class="subtitle">
+            Waarom traditioneel inzaaien onderaan
+            de streep vaak duizenden euro's extra kost.
+        </p>
+
+
         <div class="methode-container">
+
+
             <div class="methode-card">
-                <h3><span>1. Traditioneel graszaad</span> <span class="methode-price">± € 350,-</span></h3>
-                <p><strong>Verborgen kosten:</strong> <span class="badge-bad">Hoog Risico</span> Vogels eten het zaad op of wind waait het weg. Mislukt het? Dan moet je opnieuw zaad kopen en grond bewerken. Je bent al snel € 700,- en maanden tijd kwijt.</p>
-                <p><strong>Eindresultaat:</strong> Vaak onegaal met veel kale plekken und onkruid.</p>
+
+                <h3>
+
+                    <span>
+                        1. Traditioneel graszaad
+                    </span>
+
+                    <span class="methode-price">
+                        ± € 350,-
+                    </span>
+
+                </h3>
+
+                <p>
+
+                    <strong>
+                        Verborgen kosten:
+                    </strong>
+
+                    <span class="badge-bad">
+                        Hoog Risico
+                    </span>
+
+                    Vogels eten het zaad op of wind
+                    waait het weg. Mislukt het?
+                    Dan moet je opnieuw zaad kopen
+                    en grond bewerken.
+
+                </p>
+
+                <p>
+
+                    <strong>
+                        Eindresultaat:
+                    </strong>
+
+                    Vaak onegaal met veel kale
+                    plekken en onkruid.
+
+                </p>
+
             </div>
+
+
             <div class="methode-card">
-                <h3><span>2. Graszoden leggen</span> <span class="methode-price">± € 1.750,-</span></h3>
-                <p><strong>Verborgen kosten:</strong> <span class="badge-good">Laag risico</span> Wel direct groen, maar extreem duur and het kost je dagenlang loodzwaar kruiwagens sjouwen.</p>
-                <p><strong>Eindresultaat:</strong> Direct strak, maar de absolute hoofdprijs.</p>
+
+                <h3>
+
+                    <span>
+                        2. Graszoden leggen
+                    </span>
+
+                    <span class="methode-price">
+                        ± € 1.750,-
+                    </span>
+
+                </h3>
+
+                <p>
+
+                    <strong>
+                        Verborgen kosten:
+                    </strong>
+
+                    <span class="badge-good">
+                        Laag risico
+                    </span>
+
+                    Wel direct groen, maar extreem
+                    duur en het kost je dagenlang
+                    loodzware kruiwagens sjouwen.
+
+                </p>
+
+                <p>
+
+                    <strong>
+                        Eindresultaat:
+                    </strong>
+
+                    Direct strak, maar de absolute hoofdprijs.
+
+                </p>
+
             </div>
+
+
             <div class="methode-card success-card">
-                <h3><span>✨ 3. Spraygroen Hydroseeding</span> <span class="methode-price">± € 750,-</span></h3>
-                <p><strong>Verborgen kosten:</strong> <span class="badge-good">Nul Risico</span> Het zaad zit muurvast geplakt in een beschermende, biologische mulchlaag met startvoeding. Vogels kunnen er niet bij, wind en zware regen krijgen geen vat. Het lukt gegarandeerd in één keer zonder herstelkosten. Alleen water geven!</p>
-                <p><strong>Eindresultaat:</strong> Binnen 3 weken een perfect egale, onkruidwerende, ijzersterke en diepgroene mat.</p>
+
+                <h3>
+
+                    <span>
+                        ✨ 3. Spraygroen Hydroseeding
+                    </span>
+
+                    <span class="methode-price">
+                        ± € 750,-
+                    </span>
+
+                </h3>
+
+                <p>
+
+                    <strong>
+                        Verborgen kosten:
+                    </strong>
+
+                    <span class="badge-good">
+                        Nul Risico
+                    </span>
+
+                    Het zaad zit muurvast geplakt
+                    in een beschermende, biologische
+                    mulchlaag met startvoeding.
+                    Vogels kunnen er niet bij,
+                    wind en zware regen krijgen
+                    geen vat.
+
+                </p>
+
+                <p>
+
+                    <strong>
+                        Eindresultaat:
+                    </strong>
+
+                    Binnen 3 weken een perfect
+                    egale, diepgroene mat.
+
+                </p>
+
             </div>
+
         </div>
+
     </section>
+
+
+    <!-- =========================
+         OVER ONS
+    ========================= -->
 
     <section class="content-section">
-        <h2>Vakmanschap en passie voor gras</h2>
-        <p class="subtitle">Jarenlange ervaring voor een gegarandeerd perfecte groene mat.</p>
+
+        <h2>
+            Vakmanschap en passie voor gras
+        </h2>
+
+        <p class="subtitle">
+            Jarenlange ervaring voor een
+            gegarandeerd perfecte groene mat.
+        </p>
+
+
         <div class="about-box">
-            <p>Bij <strong>Spraygroen</strong> hebben we een enorme passie en jarenlange ervaring met professioneel gras- en gazononderhoud. Door onze achtergrond in de praktijk hebben we gezien hoe lastig, kwetsbaar en onzeker traditioneel inzaaien kan zijn. Daarom richten wij ons volledig op <strong>hydroseeding</strong>: dé modernste en meest effectieve methode voor een prachtig gazon.</p>
-            <p>Met onze specialistische kennis zorgen we voor de perfecte samenstelling van het mengsel, exact afgestemd op de specifieke bodem van jouw tuin. Of het nu gaat om een particuliere tuin of een groter terrein in Friesland, Groningen of Drenthe; wij zorgen voor een snelle, egale ontkieming en een ijzersterke start van jouw nieuwe grasmat. Dit scheelt uren zwoegen!</p>
+
+            <p>
+
+                Bij <strong>Spraygroen</strong> hebben we
+                een enorme passie en jarenlange ervaring
+                met professioneel gras- en gazononderhoud.
+
+                Door onze achtergrond in de praktijk hebben
+                we gezien hoe lastig, kwetsbaar en onzeker
+                traditioneel inzaaien kan zijn.
+
+                Daarom richten wij ons volledig op
+                <strong>hydroseeding</strong>.
+
+            </p>
+
+
+            <p>
+
+                Met onze specialistische kennis zorgen we
+                voor de perfecte samenstelling van het mengsel,
+                exact afgestemd op de specifieke bodem van
+                jouw tuin.
+
+                Of het nu gaat om een particuliere tuin of
+                een groter terrein in Friesland, Groningen
+                of Drenthe.
+
+            </p>
+
         </div>
+
     </section>
 
-    <!-- HIER IS HET ENIGE FORMULIER OP DE SITE - GEEN DUBBELE VELDEN MEER -->
-    <section id="offerte-sectie" class="content-section" style="background: #f0f4f1;">
-        <h2>Direct een prijsopgave ontvangen?</h2>
-        <p class="subtitle">Laat je gegevens achter en onze specialist uit Noord-Nederland stuurt je snel een vrijblijvend voorstel.</p>
+
+    <!-- =========================
+         OFFERTE FORMULIER
+    ========================= -->
+
+    <section
+        id="offerte-sectie"
+        class="content-section"
+        style="background:#f0f4f1;">
+
+        <h2>
+            Direct een prijsopgave ontvangen?
+        </h2>
+
+        <p class="subtitle">
+
+            Laat je gegevens achter en onze specialist
+            uit Noord-Nederland stuurt je snel een
+            vrijblijvend voorstel.
+
+        </p>
+
+
         <div class="form-container">
-            <!-- DE OFFICIELE VERZENDMETHODE DIE ALTIJD WERKT -->
-            <form action="https://formspree.io" method="POST">
-                <div class="form-group"><label>Naam</label><input type="text" name="name" required placeholder="Je volledige naam"></div>
-                <div class="form-group"><label>E-mailadres</label><input type="email" name="_replyto" required placeholder="je@email.nl"></div>
-                <div class="form-group"><label>Telefoonnummer (Bel- of WhatsApp)</label><input type="tel" name="phone" required placeholder="Bijv. 0612345678"></div>
-                <div class="form-group"><label>Geschatte oppervlakte gazon (in m²)</label><input type="number" name="area" placeholder="Bijv. 250"></div>
-                <div class="form-group"><label>Opmerkingen of woonplaats</label><textarea name="message" rows="4" placeholder="Vertel ons meer over de ondergrond of je woonplaats..."></textarea></div>
-                <button type="submit" class="submit-btn">Verzend Aanvraag</button>
+
+
+            <!-- FORMSPREE -->
+
+            <form
+                action="https://formspree.io/f/xzezgojk"
+                method="POST">
+
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Naam
+                    </label>
+
+                    <input
+                        id="name"
+                        type="text"
+                        name="name"
+                        required
+                        placeholder="Je volledige naam">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        E-mailadres
+                    </label>
+
+                    <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        required
+                        placeholder="je@email.nl">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Telefoonnummer
+                        (Bel- of WhatsApp)
+                    </label>
+
+                    <input
+                        id="phone"
+                        type="tel"
+                        name="phone"
+                        required
+                        placeholder="Bijv. 0612345678">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="area">
+                        Geschatte oppervlakte gazon (in m²)
+                    </label>
+
+                    <input
+                        id="area"
+                        type="number"
+                        name="area"
+                        placeholder="Bijv. 250">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Opmerkingen of woonplaats
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="4"
+                        placeholder="Vertel ons meer over de ondergrond of je woonplaats..."></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn">
+
+                    Verzend Aanvraag
+
+                </button>
+
+
             </form>
+
         </div>
+
     </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
-        <p>&copy; 2026 Spraygroen.nl. Alle getoonde richtprijzen zijn indicatief. Aan de informatie op deze website kunnen geen rechten worden ontleend.</p>
+
+        <p>
+
+            &copy; 2026 Spraygroen.nl.
+            Alle getoonde richtprijzen zijn indicatief.
+            Aan de informatie op deze website kunnen
+            geen rechten worden ontleend.
+
+        </p>
+
     </footer>
 
 </body>
